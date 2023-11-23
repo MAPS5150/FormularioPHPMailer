@@ -19,13 +19,13 @@
         $mail->isSMTP();                                            
         $mail->Host       = 'mail.subitus.com';                     
         $mail->SMTPAuth   = true;                                   
-        $mail->Username   = 'miguel.perez@subitus.com';                     
-        $mail->Password   = 'Mexico2022?';                               
+        $mail->Username   = '';                     
+        $mail->Password   = '';                               
         $mail->SMTPSecure = 'tls'; 
         $mail->Port       = 587;        
 
         // Destinatarios del correo(remitente y receptor(dauphin.swim@gmail.com electromagnetico1ntegrado@gmail.com m1guel.sant1ag0@ciencias.unam.mx)) 
-        $mail->setFrom('miguel.perez@subitus.com', 'Miguel Subitus');
+        $mail->setFrom('', 'Nombre');
         $mail->addAddress($emailTo);
 
         //Contenido del mensaje
