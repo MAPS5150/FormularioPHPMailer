@@ -25,13 +25,25 @@
         $mail->Port       = 587;        
 
         // Destinatarios del correo(remitente y receptor(dauphin.swim@gmail.com electromagnetico1ntegrado@gmail.com m1guel.sant1ag0@ciencias.unam.mx)) 
-        $mail->setFrom('', 'Nombre');
+        $mail->setFrom('', '');
         $mail->addAddress($emailTo);
 
         //Contenido del mensaje
         $mail->isHTML(true);
         $mail->Subject = $subject;
-        $mail->Body    = $bodyEmail;
+        // agregamos una imagen al contenido del correo
+        $contenido_email = '
+            <body style="margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif;>
+                <div>
+                    <a href="https://ibb.co/tcD9hwq">
+                        <img src="https://i.ibb.co/Mp7mhyc/felizguanajuato.jpg" alt="felizguanajuato" border="10" width="30%" height="30%">
+                    </a>
+                </div>
+                <h3>Bienvenido 👋, se te ha asignado un nuevo reporte.</h3>
+            </body>
+        ';
+        // se envia el email con la imagen de arriba
+        $mail->Body = $bodyEmail.$contenido_email;
 
         $mail->send();
         echo 'El mensaje se envío correctamente';
